@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 <head>
     <title>List of Pets</title>
@@ -15,18 +16,18 @@
             <th>Noise</th>
             <th>Actions</th>
         </tr>
-        {% for row in rows %}
+        {% for pet in pets %}
         <tr>
-            <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
-            <td>{{ row[3] }}</td>
-            <td>{{ row[4] }}</td> <!-- kind_name -->
-            <td>{{ row[5] }}</td> <!-- food -->
-            <td>{{ row[6] }}</td> <!-- noise -->
+            <td>{{ pet.id }}</td>
+            <td>{{ pet.name }}</td>
+            <td>{{ pet.age }}</td>
+            <td>{{ pet.owner }}</td>
+            <td>{{ pet.kind.kind_name }}</td>
+            <td>{{ pet.kind.food }}</td>
+            <td>{{ pet.kind.noise }}</td>
             <td>
-                <a href="/delete/{{ row[0] }}">Delete</a> |
-                <a href="/update/{{ row[0] }}">Update</a>
+                <a href="/delete/{{ pet.id }}">Delete</a> |
+                <a href="/update/{{ pet.id }}">Update</a>
             </td>
         </tr>
         {% endfor %}

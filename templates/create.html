@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 <head>
     <title>Create New Pet</title>
@@ -12,7 +13,7 @@
             Kind: 
             <select name="kind_id" required>
                 {% for kind in kinds %}
-                <option value="{{ kind[0] }}">{{ kind[1] }}</option>
+                <option value="{{ kind.id }}">{{ kind.kind_name }}</option>
                 {% endfor %}
             </select>
         </p>

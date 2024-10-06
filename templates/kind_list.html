@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
 <head>
     <title>List of Animal Kinds</title>
@@ -19,13 +20,13 @@
         </tr>
         {% for kind in kinds %}
         <tr>
-            <td>{{ kind[0] }}</td>
-            <td>{{ kind[1] }}</td>
-            <td>{{ kind[2] }}</td>
-            <td>{{ kind[3] }}</td>
+            <td>{{ kind.id }}</td>
+            <td>{{ kind.kind_name }}</td>
+            <td>{{ kind.food }}</td>
+            <td>{{ kind.noise }}</td>
             <td>
-                <a href="/kind/update/{{ kind[0] }}">Update</a> |
-                <a href="/kind/delete/{{ kind[0] }}">Delete</a>
+                <a href="/kind/update/{{ kind.id }}">Update</a> |
+                <a href="/kind/delete/{{ kind.id }}">Delete</a>
             </td>
         </tr>
         {% endfor %}
@@ -34,4 +35,3 @@
     <a href="/kind/create">Add New Kind</a>
 </body>
 </html>
-

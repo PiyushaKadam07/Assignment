@@ -1,18 +1,19 @@
+<!doctype html>
 <html>
 <head>
     <title>Update Pet</title>
 </head>
 <body>
     <h1>Update Pet</h1>
-    <form action="/update/{{ pet[0] }}" method="POST">
-        <p>Name: <input name="name" value="{{ pet[1] }}" required /></p>
-        <p>Age: <input name="age" type="number" min="0" value="{{ pet[2] }}" required /></p>
-        <p>Owner: <input name="owner" value="{{ pet[4] }}" required /></p>
+    <form action="/update/{{ pet.id }}" method="POST">
+        <p>Name: <input name="name" value="{{ pet.name }}" required /></p>
+        <p>Age: <input name="age" type="number" min="0" value="{{ pet.age }}" required /></p>
+        <p>Owner: <input name="owner" value="{{ pet.owner }}" required /></p>
         <p>
             Kind: 
             <select name="kind_id" required>
                 {% for kind in kinds %}
-                <option value="{{ kind[0] }}" {% if pet[3] == kind[0] %}selected{% endif %}>{{ kind[1] }}</option>
+                <option value="{{ kind.id }}" {% if pet.kind.id == kind.id %}selected{% endif %}>{{ kind.kind_name }}</option>
                 {% endfor %}
             </select>
         </p>
